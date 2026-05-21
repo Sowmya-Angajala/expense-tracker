@@ -12,9 +12,7 @@ function TxItem({ tx, onClick }) {
         <div className="tx-cat">{cat.label}</div>
       </div>
       <div className="tx-right">
-        <div className={`tx-amount ${isPos?"pos":"neg"}`}>
-          {isPos ? "+" : "−"}{fmtCurrency(tx.amount)}
-        </div>
+        <div className={`tx-amount ${isPos?"pos":"neg"}`}>{isPos?"+":"−"}{fmtCurrency(tx.amount)}</div>
       </div>
     </div>
   );
