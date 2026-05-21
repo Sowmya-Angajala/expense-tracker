@@ -1,7 +1,7 @@
 import { useState, useEffect, useReducer, useCallback, useMemo } from "react";
 import { fmtCurrency } from "../utils/helpers";
 import Icon from "./Icons/Icons";
-import TxItem from "./TxItem";
+import TransactionItem from "./TransactionItem";
 
 function DashBoardScreen({ txns, onViewAll, onTxClick }) {
   const balance = txns.reduce((s, t) => s + t.amount, 0);
@@ -53,7 +53,7 @@ function DashBoardScreen({ txns, onViewAll, onTxClick }) {
       </div>
       {recent.length === 0
         ? <div className="empty-state"><Icon name="transactions" size={48} /><p>No transactions yet.<br />Tap + to add one.</p></div>
-        : <div className="tx-list">{recent.map(t => <TxItem key={t.id} tx={t} onClick={onTxClick} />)}</div>
+        : <div className="tx-list">{recent.map(t => <TransactionItem key={t.id} tx={t} onClick={onTxClick} />)}</div>
       }
     </>
   );

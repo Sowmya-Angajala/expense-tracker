@@ -2,7 +2,7 @@ import { useState, useEffect, useReducer, useCallback, useMemo } from "react";
 import { CATEGORIES, INCOME_CATS, today } from "../utils/helpers";
 import Icon from "./Icons/Icons";
 
-function AddScreen({ onSave, editTx, onCancel }) {
+function AddTransactionScreen({ onSave, editTx, onCancel }) {
   const [type, setType]       = useState(editTx?.type || "expense");
   const [amount, setAmount]   = useState(editTx ? String(Math.abs(editTx.amount)) : "");
   const [category, setCategory] = useState(editTx?.category || "");
@@ -76,4 +76,4 @@ function AddScreen({ onSave, editTx, onCancel }) {
   );
 }
 
-export default AddScreen;
+export default AddTransactionScreen;

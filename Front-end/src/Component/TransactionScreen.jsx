@@ -3,9 +3,9 @@ import React from 'react'
 import { useState, useEffect, useReducer, useCallback, useMemo } from "react";
 import { CATEGORIES, groupByDate, INCOME_CATS } from '../utils/helpers';
 import Icon from './Icons/Icons';
-import TxItem from './TxItem';
+import TransactionItem from './TransactionItem';
 
-function TxScreen({ txns, onTxClick }) {
+function TransactionScreen({ txns, onTxClick }) {
   const [search, setSearch] = useState("");
   const [filter, setFilter] = useState("all");
   const allChips = [{id:"all",label:"All"},...CATEGORIES.map(c=>({id:c.id,label:c.label})),...INCOME_CATS.slice(0,2).map(c=>({id:c.id,label:c.label}))];
@@ -32,7 +32,7 @@ function TxScreen({ txns, onTxClick }) {
           : Object.entries(groups).map(([label,items])=>(
             <div key={label} className="date-group">
               <div className="date-label">{label}</div>
-              <div className="tx-list">{items.map(t=><TxItem key={t.id} tx={t} onClick={onTxClick}/>)}</div>
+              <div className="tx-list">{items.map(t=><TransactionItem key={t.id} tx={t} onClick={onTxClick}/>)}</div>
             </div>
           ))
         }
@@ -41,4 +41,4 @@ function TxScreen({ txns, onTxClick }) {
   );
 }
 
-export default TxScreen;
+export default TransactionScreen;

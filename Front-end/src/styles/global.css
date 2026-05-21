@@ -43,9 +43,7 @@ body {
   -webkit-font-smoothing: antialiased
 }
 
-/* ══════════════════════════════
-   APP SHELL — layout backbone
-══════════════════════════════ */
+
 .app-root {
   display: flex;
   flex-direction: column;
@@ -53,7 +51,6 @@ body {
   background: var(--bg)
 }
 
-/* ── Mobile: stacked column, bottom nav ── */
 .app-body {
   flex: 1;
   display: flex;
@@ -86,7 +83,6 @@ body {
   z-index: 100
 }
 
-/* ── Tablet ≥ 700px: sidebar collapsed (icons only) ── */
 @media(min-width:700px) {
   .app-body {
     flex-direction: row
@@ -139,7 +135,7 @@ body {
   }
 }
 
-/* ── Desktop ≥ 1024px: sidebar expanded ── */
+/*   ≥ 1024px: sidebar expanded  */
 @media(min-width:1024px) {
   .sidebar {
     width: var(--sidebar-w);
@@ -180,7 +176,6 @@ body {
   }
 }
 
-/* ── Wide ≥ 1280px: content gets a max-width and centers ── */
 @media(min-width:1280px) {
   .main-content {
     display: flex;
@@ -209,9 +204,7 @@ body {
   }
 }
 
-/* ════════════════
-   SIDEBAR
-════════════════ */
+
 .brand {
   display: flex;
   align-items: center;
@@ -305,9 +298,7 @@ body {
   transform: scale(0.97)
 }
 
-/* ════════════════
-   BOTTOM NAV (mobile)
-════════════════ */
+
 .nav-item {
   display: flex;
   flex-direction: column;
@@ -357,9 +348,7 @@ body {
   transform: scale(0.95)
 }
 
-/* ════════════════
-   SCREEN COMMON
-════════════════ */
+
 .screen {
   animation: fadeIn 0.18s ease
 }
@@ -420,9 +409,7 @@ body {
   }
 }
 
-/* ════════════════
-   DASHBOARD
-════════════════ */
+
 .dash-hero {
   margin: 20px;
   background: var(--accent);
@@ -639,9 +626,7 @@ body {
   }
 }
 
-/* ════════════════
-   TRANSACTION ITEM
-════════════════ */
+
 .tx-list {
   display: flex;
   flex-direction: column;
@@ -747,9 +732,7 @@ body {
   }
 }
 
-/* ════════════════
-   TRANSACTIONS SCREEN
-════════════════ */
+
 .search-wrap {
   padding: 12px 20px;
   position: relative
@@ -869,9 +852,7 @@ body {
   line-height: 1.6
 }
 
-/* ════════════════
-   ADD TRANSACTION
-════════════════ */
+
 .add-screen {
   padding: 0 0 20px
 }
@@ -1067,7 +1048,6 @@ body {
   cursor: not-allowed
 }
 
-/* Add screen: two-col layout on wide screens */
 @media(min-width:700px) {
   .add-screen-inner {
     padding: 0 24px;
@@ -1106,9 +1086,6 @@ body {
   }
 }
 
-/* ════════════════
-   ANALYTICS
-════════════════ */
 .analytics-screen {
   padding: 0 0 20px
 }
@@ -1403,7 +1380,6 @@ transition:
   background: var(--surface3)
 }
 
-/* Analytics: wider layouts */
 @media(min-width:700px) {
   .period-nav {
     padding: 16px 24px
@@ -1482,9 +1458,6 @@ transition:
   }
 }
 
-/* ════════════════
-   MODAL
-════════════════ */
 .modal-backdrop {
   position: fixed;
   inset: 0;

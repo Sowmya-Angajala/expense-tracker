@@ -1,12 +1,12 @@
 import { useState, useEffect, useReducer, useCallback, useMemo } from "react";
-import AddScreen from "./Component/AddScreen";
 import DashBoardScreen from "./Component/DashBoardScreen";
-import TxScreen from "./Component/TxScreen";
 import AnalyticsScreen from "./Component/AnalyticsScreen";
 import { init, reducer } from "./Reducer/reducer";
 import Icon from "./Component/Icons/Icons";
-import TxModal from "./Component/TxModal";
 import Sidebar from "./Component/Sidebar";
+import AddTransactionScreen from "./Component/AddTransactionScreen";
+import TransactionModal from "./Component/TransactionModal";
+import TransactionScreen from "./Component/TransactionScreen";
  
 
 
@@ -31,9 +31,9 @@ function App() {
  
           <div className="main-content">
             {showAdd
-              ? <AddScreen onSave={handleSave} editTx={editTx} onCancel={()=>{setShowAdd(false);setEditTx(null);}}/>
+              ? <AddTransactionScreen onSave={handleSave} editTx={editTx} onCancel={()=>{setShowAdd(false);setEditTx(null);}}/>
               : screen==="dashboard"    ? <DashBoardScreen txns={txns} onViewAll={()=>setScreen("transactions")} onTxClick={setViewTx}/>
-              : screen==="transactions" ? <TxScreen txns={txns} onTxClick={setViewTx}/>
+              : screen==="transactions" ? <TransactionScreen txns={txns} onTxClick={setViewTx}/>
               :                          <AnalyticsScreen txns={txns}/>
             }
           </div>
@@ -50,7 +50,7 @@ function App() {
           </nav>
         )}
  
-        {viewTx && <TxModal tx={viewTx} onEdit={openEdit} onDelete={()=>handleDelete(viewTx.id)} onClose={()=>setViewTx(null)}/>}
+        {viewTx && <TransactionModal tx={viewTx} onEdit={openEdit} onDelete={()=>handleDelete(viewTx.id)} onClose={()=>setViewTx(null)}/>}
       </div>
     </>
   );

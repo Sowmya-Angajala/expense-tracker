@@ -3,7 +3,7 @@ import { useState, useEffect, useReducer, useCallback, useMemo } from "react";
 import { fmtCurrency, getCat } from '../utils/helpers';
 import Icon from './Icons/Icons';
 
-function TxModal({ tx, onEdit, onDelete, onClose }) {
+function TransactionModal({ tx, onEdit, onDelete, onClose }) {
   const cat = getCat(tx.category, tx.type);
   return (
     <div className="modal-backdrop" onClick={e=>{ if(e.target===e.currentTarget) onClose(); }}>
@@ -26,4 +26,4 @@ function TxModal({ tx, onEdit, onDelete, onClose }) {
   );
 }
 
-export default TxModal
+export default TransactionModal

@@ -1,7 +1,7 @@
 import { useState, useEffect, useReducer, useCallback, useMemo } from "react";
 import { fmtCurrency, getCat } from "../utils/helpers";
 
-function TxItem({ tx, onClick }) {
+function TransactionItem({ tx, onClick }) {
   const cat = getCat(tx.category, tx.type);
   const isPos = tx.amount > 0;
   return (
@@ -18,4 +18,4 @@ function TxItem({ tx, onClick }) {
   );
 }
 
-export default TxItem;
+export default TransactionItem;
